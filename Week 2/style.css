@@ -148,9 +148,14 @@ section {
 
 .about-grid,
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 56px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-grid > *,
+.contact-grid > * {
+  width: 48%;
 }
 
 .profile-card {
@@ -182,28 +187,28 @@ section {
 }
 
 dl {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 12px 24px;
+  margin-top: 20px;
 }
 
 dt {
+  margin-top: 16px;
   font-weight: bold;
 }
 
 dd {
-  margin: 0;
+  margin: 4px 0 0;
   color: #665f58;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
 .project-card {
   display: flex;
+  width: 48%;
   min-height: 300px;
   flex-direction: column;
   justify-content: flex-end;
@@ -211,17 +216,8 @@ dd {
   background: #fffaf1;
 }
 
-.project-card:nth-child(2) {
-  color: #f7f0e3;
-  background: #171717;
-}
-
-.project-card p:not(.project-number) {
+.project-card p {
   color: #665f58;
-}
-
-.project-card:nth-child(2) p:not(.project-number) {
-  color: #d9cfc0;
 }
 
 .project-number {
@@ -322,10 +318,22 @@ footer p {
   }
 
   .about-grid,
-  .contact-grid,
+  .contact-grid {
+    display: block;
+  }
+
+  .about-grid > *,
+  .contact-grid > * {
+    width: 100%;
+  }
+
+  .about-copy,
+  .contact-grid form {
+    margin-top: 32px;
+  }
+
   .project-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    display: block;
   }
 
   .profile-card {
@@ -333,7 +341,9 @@ footer p {
   }
 
   .project-card {
+    width: 100%;
     min-height: 260px;
+    margin-bottom: 24px;
   }
 
   footer {
@@ -355,11 +365,4 @@ footer p {
     font-size: 38px;
   }
 
-  dl {
-    display: block;
-  }
-
-  dt {
-    margin-top: 16px;
-  }
 }
